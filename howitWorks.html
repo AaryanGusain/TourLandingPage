@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TripGenie - How It Works</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d4c5a9","primary-hover": "#c3b498",
+                        "background-dark": "#000000","surface-dark": "#0a0a0a","text-beige": "#eaddcf","text-muted": "#888888",
+                        "border-dark": "#222222",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0rem","lg": "0rem",
+                        "xl": "0rem",
+                        "2xl": "0rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white overflow-x-hidden transition-colors duration-300">
+<header class="sticky top-0 z-50 w-full border-b border-border-dark bg-background-dark/95 backdrop-blur-md">
+<div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+                <a class="flex items-center gap-3 text-white group cursor-pointer" href="index.html">
+                    <div class="flex items-center justify-center size-8 bg-white text-black">
+                        <span class="material-symbols-outlined">flight_takeoff</span>
+                    </div>
+                    <h2 class="text-xl font-bold tracking-tight group-hover:text-primary transition-colors">TripGenie</h2>
+                </a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a class="text-sm font-medium text-text-beige hover:text-white transition-colors" href="index.html">Home</a>
+                    <a class="text-sm font-medium text-text-beige hover:text-white transition-colors" href="howitWorks.html">How it Works</a>
+                    <a class="text-sm font-medium text-text-beige hover:text-white transition-colors" href="aboutUs.html">About Us</a>
+                    <a class="text-sm font-medium text-text-beige hover:text-white transition-colors" href="contactUs.html">Contact</a>
+                </div>
+<div class="flex gap-3">
+<button class="hidden sm:flex h-10 px-4 items-center justify-center text-sm font-bold text-white hover:text-primary transition-colors border border-transparent hover:border-border-dark">
+                    Login
+                </button>
+<button class="flex h-10 px-5 items-center justify-center bg-white text-black text-sm font-bold hover:bg-primary hover:text-black transition-all">
+                    Sign Up
+                </button>
+</div>
+</div>
+</header>
+<main class="flex flex-col items-center">
+<section class="w-full max-w-7xl px-6 py-20 md:py-32 flex flex-col items-center text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-border-dark border border-border-dark text-primary text-xs font-bold uppercase tracking-wider mb-6">
+<span class="w-1.5 h-1.5 bg-primary"></span>
+                AI-Powered Travel
+            </div>
+<h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-white max-w-4xl">
+                Turn your Likes into <span class="text-primary italic font-light">Flights</span>
+</h1>
+<p class="text-lg md:text-xl text-text-muted max-w-2xl leading-relaxed mb-10">
+                Stop planning, start experiencing. We analyze your digital footprint to curate the perfect getaway tailored exactly to your vibe.
+            </p>
+<div class="relative w-full max-w-5xl aspect-[16/9] md:aspect-[21/9] overflow-hidden border border-border-dark group bg-surface-dark">
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80" data-alt="Scenic travel landscape with mountains and a van representing freedom" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9ctBMmn7CQLNhNtfOMMGGoZdxJlc3VyxdlSEHIM1GDx4_bnSHuYNdVe6iWRUaa2SR9ag26aLT5fxrwb0Awn-F1KihB-6HbrACFwc4soDvn38CrUTZD5iyxnk6cimKFkLEsD9U6xQdPA7ZCqmmhzgxbOSdK2LvjpwViUJ0gSfoiwgRy3VtUeuEuOAKgoTFqR5CCauxyR6cuG7DZ4oamlrJmkFwoUu0A2lXqx1w_athff5dV_rUaaM5UmC1HRBXqY7REKWUeLjIlTM');">
+</div>
+<div class="absolute bottom-0 left-0 p-8 z-20 flex flex-col items-start gap-3">
+<span class="px-2 py-1 bg-black border border-border-dark text-primary text-xs font-medium uppercase tracking-widest">Example Trip</span>
+<h3 class="text-white text-2xl font-bold">Icelandic Ring Road</h3>
+<div class="flex items-center gap-2 text-text-beige text-sm font-medium">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+<span>98% Match with your profile</span>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full max-w-5xl px-6 py-16 relative">
+<div class="absolute left-6 md:left-1/2 top-24 bottom-24 w-px bg-border-dark -translate-x-1/2 hidden md:block"></div>
+<div class="flex flex-col gap-24 relative">
+<div class="group flex flex-col md:flex-row items-center gap-8 md:gap-16">
+<div class="flex-1 w-full order-2 md:order-1 text-left md:text-right">
+<div class="flex flex-col items-start md:items-end gap-2">
+<span class="text-6xl font-light text-border-dark group-hover:text-primary transition-colors">01</span>
+<h3 class="text-2xl font-bold text-white">Connect Your World</h3>
+<p class="text-text-muted leading-relaxed max-w-sm">
+                                Securely link your social accounts like Instagram or TikTok. We don't post for you; we just learn what makes you tick.
+                            </p>
+</div>
+</div>
+<div class="relative z-10 order-1 md:order-2">
+<div class="size-16 bg-black border border-border-dark flex items-center justify-center group-hover:border-primary transition-all duration-300">
+<span class="material-symbols-outlined text-white text-3xl">link</span>
+</div>
+</div>
+<div class="flex-1 w-full order-3 hidden md:block">
+<div class="h-48 w-full bg-surface-dark border border-border-dark p-4 flex items-center justify-center relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="flex gap-4 opacity-50">
+<div class="w-12 h-16 bg-border-dark animate-pulse"></div>
+<div class="w-12 h-16 bg-border-dark animate-pulse delay-75"></div>
+<div class="w-12 h-16 bg-border-dark animate-pulse delay-150"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="group flex flex-col md:flex-row items-center gap-8 md:gap-16">
+<div class="flex-1 w-full order-3 md:order-1 hidden md:block">
+<div class="h-48 w-full bg-surface-dark border border-border-dark p-4 flex items-center justify-center relative overflow-hidden">
+<span class="material-symbols-outlined text-6xl text-text-beige">auto_awesome</span>
+</div>
+</div>
+<div class="relative z-10 order-1 md:order-2">
+<div class="size-16 bg-black border border-border-dark flex items-center justify-center group-hover:border-primary transition-all duration-300">
+<span class="material-symbols-outlined text-white text-3xl">psychology</span>
+</div>
+</div>
+<div class="flex-1 w-full order-2 md:order-3 text-left">
+<div class="flex flex-col items-start gap-2">
+<span class="text-6xl font-light text-border-dark group-hover:text-primary transition-colors">02</span>
+<h3 class="text-2xl font-bold text-white">The Magic Happens</h3>
+<p class="text-text-muted leading-relaxed max-w-sm">
+                                Our engine analyzes your aesthetic, saved locations, and interests to find hidden gems matching your unique style.
+                            </p>
+</div>
+</div>
+</div>
+<div class="group flex flex-col md:flex-row items-center gap-8 md:gap-16">
+<div class="flex-1 w-full order-2 md:order-1 text-left md:text-right">
+<div class="flex flex-col items-start md:items-end gap-2">
+<span class="text-6xl font-light text-border-dark group-hover:text-primary transition-colors">03</span>
+<h3 class="text-2xl font-bold text-white">Pack Your Bags</h3>
+<p class="text-text-muted leading-relaxed max-w-sm">
+                                Receive a day-by-day, hyper-personalized itinerary complete with booking links. It’s a trip that actually feels like you.
+                            </p>
+</div>
+</div>
+<div class="relative z-10 order-1 md:order-2">
+<div class="size-16 bg-black border border-border-dark flex items-center justify-center group-hover:border-primary transition-all duration-300">
+<span class="material-symbols-outlined text-white text-3xl">flight_class</span>
+</div>
+</div>
+<div class="flex-1 w-full order-3 hidden md:block">
+<div class="h-48 w-full bg-surface-dark border border-border-dark p-4 relative overflow-hidden flex flex-col gap-3 justify-center px-8">
+<div class="h-px w-3/4 bg-border-dark"></div>
+<div class="h-px w-1/2 bg-border-dark"></div>
+<div class="h-px w-2/3 bg-border-dark"></div>
+<div class="absolute right-4 bottom-4 size-8 border border-text-beige flex items-center justify-center text-text-beige">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full px-6 py-20 bg-black mt-20 border-t border-border-dark">
+<div class="max-w-4xl mx-auto flex flex-col items-center text-center gap-8">
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">
+                    Ready to discover your next adventure?
+                </h2>
+<p class="text-text-muted text-lg max-w-2xl">
+                    Join thousands of travelers who have stopped planning and started exploring with TripGenie.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+<button class="flex h-12 px-8 items-center justify-center bg-white text-black text-base font-bold hover:bg-primary transition-all">
+<span class="mr-2">Build My Trip Now</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="flex h-12 px-8 items-center justify-center bg-transparent border border-white text-white text-base font-bold hover:bg-white hover:text-black transition-colors">
+                        View Sample Itinerary
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full border-t border-border-dark bg-background-dark py-10 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-text-muted">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-white flex items-center justify-center text-black">
+<span class="material-symbols-outlined text-xs">flight_takeoff</span>
+</div>
+<span class="font-bold text-white">TripGenie</span>
+</div>
+<div class="flex gap-6">
+                    <a class="hover:text-primary transition-colors" href="#">Privacy</a>
+                    <a class="hover:text-primary transition-colors" href="#">Terms</a>
+                    <a class="hover:text-primary transition-colors" href="contactUs.html">Contact</a>
+</div>
+<div>
+                © 2023 TripGenie Inc.
+            </div>
+</div>
+</footer>
+</body></html>
