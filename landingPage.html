@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>WanderAI - AI Travel Itineraries</title>
+<title>Tour - AI Travel Itineraries</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -28,7 +28,80 @@
             },
         }
     </script>
-<style>::-webkit-scrollbar {
+<style>
+        :root {
+            /* Typography Scale - Major Third (1.25) for desktop, Minor Third (1.2) for mobile */
+            --t-h1-desktop: 60px;
+            --t-h1-mobile: 40px;
+            --t-h2-desktop: 36px;
+            --t-h2-mobile: 28px;
+            --t-h3-desktop: 20px;
+            --t-h3-mobile: 18px;
+            --t-body: 16px;
+            --t-label: 14px;
+            
+            /* Line Heights */
+            --lh-tight: 1.2;
+            --lh-normal: 1.6;
+            
+            /* Font Weights */
+            --fw-medium: 500;
+            --fw-semibold: 600;
+            --fw-bold: 700;
+        }
+        
+        /* Typography Utility Classes */
+        .type-h1 {
+            font-size: var(--t-h1-mobile);
+            font-weight: var(--fw-bold);
+            line-height: var(--lh-tight);
+        }
+        
+        @media (min-width: 768px) {
+            .type-h1 {
+                font-size: var(--t-h1-desktop);
+            }
+        }
+        
+        .type-h2 {
+            font-size: var(--t-h2-mobile);
+            font-weight: var(--fw-semibold);
+            line-height: var(--lh-tight);
+        }
+        
+        @media (min-width: 768px) {
+            .type-h2 {
+                font-size: var(--t-h2-desktop);
+            }
+        }
+        
+        .type-h3 {
+            font-size: var(--t-h3-mobile);
+            font-weight: var(--fw-medium);
+            line-height: var(--lh-tight);
+        }
+        
+        @media (min-width: 768px) {
+            .type-h3 {
+                font-size: var(--t-h3-desktop);
+            }
+        }
+        
+        .type-body {
+            font-size: var(--t-body);
+            line-height: var(--lh-normal);
+        }
+        
+        .type-label {
+            font-size: var(--t-label);
+            font-weight: var(--fw-medium);
+        }
+        
+        .measure {
+            max-width: 70ch;
+        }
+        
+        ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
@@ -40,7 +113,8 @@
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #e3e1d5;
-        }html {
+        }
+        html {
             scroll-behavior: smooth;
         }
     </style>
@@ -49,21 +123,19 @@
 <div class="relative flex min-h-screen w-full flex-col overflow-hidden">
 <div class="w-full border-b border-white/10 bg-black sticky top-0 z-50">
 <div class="flex items-center justify-between px-6 py-4 max-w-[1200px] mx-auto w-full">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-beige-text text-3xl">flight_takeoff</span>
-<h2 class="text-white text-xl font-bold tracking-tight">WanderAI</h2>
-</div>
+<a href="/" class="flex items-center gap-3">
+<img src="tourLOGO.jpeg" alt="Tour Logo" class="h-10 w-auto object-contain"/>
+<h2 class="text-white text-xl font-bold tracking-tight">Tour</h2>
+</a>
                 <div class="hidden md:flex items-center gap-8">
-                    <a class="text-beige-text hover:text-white text-sm font-medium transition-colors" href="index.html">Home</a>
-                    <a class="text-beige-text hover:text-white text-sm font-medium transition-colors" href="howitWorks.html">How it Works</a>
-                    <a class="text-beige-text hover:text-white text-sm font-medium transition-colors" href="aboutUs.html">About Us</a>
-                    <a class="text-beige-text hover:text-white text-sm font-medium transition-colors" href="contactUs.html">Contact</a>
+                    <a class="text-beige-text hover:text-white text-sm font-medium transition-colors" href="/">Home</a>
+                    <a class="text-beige-text hover:text-white text-sm font-medium transition-colors" href="/aboutUs">About Us</a>
+                    <a class="text-beige-text hover:text-white text-sm font-medium transition-colors" href="/contactUs">Contact</a>
                 </div>
                 <div class="flex items-center gap-4">
-                    <a class="hidden sm:block text-beige-text hover:text-white text-sm font-medium transition-colors" href="contactUs.html">Contact</a>
-<button class="flex items-center justify-center rounded-lg h-10 px-5 bg-beige-text hover:bg-white transition-all text-black text-sm font-bold border border-transparent">
-                        Get Started
-                    </button>
+<a href="/contactUs" class="flex items-center justify-center rounded-lg h-10 px-5 bg-beige-text hover:bg-white transition-all text-black text-sm font-bold border border-transparent">
+                        Join Waitlist
+                    </a>
 </div>
 </div>
 </div>
@@ -71,38 +143,21 @@
 <div class="flex flex-col max-w-[1200px] w-full gap-12 lg:flex-row lg:items-center">
 <div class="flex flex-col gap-6 flex-1 text-left lg:pr-10">
 <div class="flex items-center gap-2 mb-2">
-<span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-beige-text text-xs font-bold uppercase tracking-wider">
+<a href="/contactUs" class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-beige-text text-xs font-bold uppercase tracking-wider hover:bg-white/10 transition-all cursor-pointer">
                             Beta Access Open
-                        </span>
+                        </a>
 </div>
-<h1 class="text-white text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+<h1 class="text-white type-h1 tracking-tight">
                         Your Social Feed <br/>
 <span class="text-beige-text">Is Your Passport</span>
 </h1>
-<p class="text-beige-dim text-lg md:text-xl font-normal leading-relaxed max-w-[600px]">
+<p class="text-beige-dim type-body measure">
                         Stop planning, start experiencing. We build personalized AI travel itineraries directly from your social media insights and aesthetic preferences.
                     </p>
-<div class="flex flex-wrap gap-4 mt-4">
-<button class="flex items-center justify-center rounded-lg h-12 px-8 bg-beige-text text-black text-base font-bold hover:bg-white transition-all hover:scale-105 border border-transparent">
-                            Start for Free
-                        </button>
-<button class="flex items-center justify-center rounded-lg h-12 px-8 bg-transparent border border-white/20 text-white hover:bg-white/5 text-base font-bold transition-all">
-<span class="material-symbols-outlined mr-2 text-[20px]">play_circle</span>
-                            View Demo
-                        </button>
-</div>
-<div class="flex items-center gap-4 pt-4 text-beige-dim text-sm">
-<div class="flex -space-x-2">
-<div class="w-8 h-8 rounded-full bg-gray-500 border-2 border-black bg-cover bg-center" data-alt="User avatar 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMjj9dGoCZbFUmEIfOcUGu6XHpnEm0H9CslihVgjXOC9aVYOQo96YoKqChT9dURsjSjo_XW4BfXzCbkVBIySLwVKUXgAy1U7BzNrAEtsZ9Q0PJ1RRhrmHxzqnqYJRAjklq54_FiL27I9I9y1YUjdNUCH0E7lMDXq1ekGjoumVNWCcjcNkj_ZAvR-QfEXXoX_erAxdL5tq5fzxuWuM7ui1xmcd_MXTCR39EIiP1rUvGOdhKR6us9lJLEok5Gx7L13TiKBBzaS442I0');"></div>
-<div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-black bg-cover bg-center" data-alt="User avatar 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAU4Jw5jHLwSE_cjk-ImUCAgc045yd3yNK1OPidOAFBb64qGN1xYacrR7eWEnEaCER6M_WBVhGcYpi0MCdletTNnXO4rKtx5_LUaGc6HdtwetvPP0DeG3Wkb2nGUaqVJ1Ge9MG4zCi9x5eGauFI2OH3nvp0suDjZIue4n0M6h_KmUDir4WzwswAF11ZlY9ev00PNtKjr6k7sNS439_pgcpAEF1tb8-3ktSZmMoROAHUPVwd5duuDm4qqAAyy9xZMqn_E3dhdiWEjE');"></div>
-<div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-black bg-cover bg-center" data-alt="User avatar 3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBAxlpFIsO8vCJIDVVApWG5HJLJp877wg663uNr90fzFaQ_zDwgnWpgCwS2_rFaw9bUisbHoJ07m93pVmhr82HeWNyBy-ygUGXseq3QrQp_j0mydhPoukK4CtS_s56mDtsvRpEcUXN6zDKF4CX37TSNT9mlxdAIA0AcsSd_GbBN5rjIQsWHfzDa1eR67SG4Xj1umCdrMgGxP-iqwRqxaCP2IT3R8BJV4f3YHgY75wvEdGivTmvn6TgScIYHl-_DWDa4oXzn8G3t0ig');"></div>
-</div>
-<p>Join 10,000+ travelers exploring smarter.</p>
-</div>
 </div>
 <div class="flex-1 w-full relative group">
 <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-dark border border-white/10">
-<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay grayscale" data-alt="Abstract dark map background pattern with contour lines" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCKtr20rkDaTvvoJca285toyYekFyEwPeRe8jvknADfjbdEfbjmfMhyDH9NcmmDXL6ba_pR5a_PkfK359JzVVHPrYAOXCtWqIBve30inqQ_KrDD4XNi40i9i0hshri1FNIbCx5X0WLyKNLB1L_4MPKaUZp7Suqbwk5VYcVU0IsXAL5tO3Ch98czMzC6Ce5fHIIO7t5DG8fcJDCVK75Bbjkjd_FiVrpqQBW4XQ3bn43BdGrcjwjwlt-Vk1LqfH8NFx1JZAfeBE0soQ');"></div>
+<div class="absolute inset-0 bg-cover bg-center opacity-80 mix-blend-normal" data-alt="Kyoto cafe aesthetic" style="background-image: url('Kyoto Cafe Picture.jpg');"></div>
 <div class="absolute top-8 right-8 bg-black/90 backdrop-blur-sm p-4 rounded-lg border border-white/10 shadow-xl max-w-[200px]">
 <div class="flex items-center gap-2 mb-2">
 <span class="material-symbols-outlined text-beige-text text-sm">auto_awesome</span>
@@ -128,24 +183,20 @@
 <div class="px-6 md:px-10 max-w-[1200px] mx-auto">
 <div class="flex flex-col md:flex-row gap-12 md:gap-20">
 <div class="md:w-1/3 flex flex-col justify-center">
-<h2 class="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">
-                            From Likes to <br/><span class="text-beige-text">Flights</span>
+<h2 class="type-h2 mb-6 text-white">
+                            From Shares to <br/><span class="text-beige-text">Adventures</span>
 </h2>
-<p class="text-beige-dim text-base mb-8 leading-relaxed">
+<p class="text-beige-dim type-body measure mb-8">
                             Our AI analyzes your unique digital footprint to curate trips that match your aesthetic and interests perfectly. No more generic "Top 10" lists.
                         </p>
-<button class="text-beige-text font-bold text-sm flex items-center gap-2 hover:gap-3 hover:text-white transition-all">
-                            Learn more about our AI
-                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</button>
 </div>
 <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 <div class="p-6 rounded-xl bg-surface-dark border border-white/5 hover:border-beige-text/30 transition-all group">
 <div class="w-12 h-12 rounded-lg bg-black flex items-center justify-center mb-4 group-hover:bg-white/5 transition-colors">
-<span class="material-symbols-outlined text-white group-hover:text-beige-text transition-colors">link</span>
+<span class="material-symbols-outlined text-white group-hover:text-beige-text transition-colors">share</span>
 </div>
-<h3 class="text-white font-bold text-lg mb-2">Connect Accounts</h3>
-<p class="text-beige-dim text-sm leading-relaxed">Securely link your Instagram or TikTok to let us understand your vibe.</p>
+<h3 class="text-white font-bold text-lg mb-2">Share to Tour</h3>
+<p class="text-beige-dim text-sm leading-relaxed">Share reels and posts you love directly into Tour. We learn your style from what inspires you.</p>
 </div>
 <div class="p-6 rounded-xl bg-surface-dark border border-white/5 hover:border-beige-text/30 transition-all group">
 <div class="w-12 h-12 rounded-lg bg-black flex items-center justify-center mb-4 group-hover:bg-white/5 transition-colors">
@@ -156,10 +207,10 @@
 </div>
 <div class="p-6 rounded-xl bg-surface-dark border border-white/5 hover:border-beige-text/30 transition-all group">
 <div class="w-12 h-12 rounded-lg bg-black flex items-center justify-center mb-4 group-hover:bg-white/5 transition-colors">
-<span class="material-symbols-outlined text-white group-hover:text-beige-text transition-colors">map</span>
+<span class="material-symbols-outlined text-white group-hover:text-beige-text transition-colors">mail</span>
 </div>
-<h3 class="text-white font-bold text-lg mb-2">Get Itinerary</h3>
-<p class="text-beige-dim text-sm leading-relaxed">Receive a day-by-day plan tailored specifically to your tastes.</p>
+<h3 class="text-white font-bold text-lg mb-2">Gmail Sync</h3>
+<p class="text-beige-dim text-sm leading-relaxed">Sync your inbox to automatically pull reservations and confirmations into one organized itinerary.</p>
 </div>
 </div>
 </div>
@@ -196,7 +247,7 @@
 </div>
 <div>
 <h4 class="text-white font-bold text-lg">Dynamic Scheduling</h4>
-<p class="text-beige-dim text-sm mt-1">Rain predicted? Our AI automatically adjusts your outdoor activities to museum visits.</p>
+<p class="text-beige-dim text-sm mt-1">Change your mind mid-day? Our AI instantly adapts your itinerary to match your mood and energy.</p>
 </div>
 </div>
 <div class="flex gap-4">
@@ -204,8 +255,8 @@
 <span class="material-symbols-outlined text-beige-text">check_circle</span>
 </div>
 <div>
-<h4 class="text-white font-bold text-lg">Seamless Booking</h4>
-<p class="text-beige-dim text-sm mt-1">Book your entire personalized trip in one click through our integrated partners.</p>
+<h4 class="text-white font-bold text-lg">Reservations, Organized</h4>
+<p class="text-beige-dim text-sm mt-1">Gmail sync automatically pulls all your confirmations and reservations into one organized itinerary.</p>
 </div>
 </div>
 </div>
@@ -215,44 +266,23 @@
 <div class="max-w-[800px] mx-auto relative z-10 text-center flex flex-col gap-8">
 <div>
 <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Ready to travel smarter?</h2>
-<p class="text-beige-dim text-lg">Join the waitlist to get early access to our beta and receive your first itinerary for free.</p>
-</div>
-<div class="w-full max-w-[500px] mx-auto">
-<form class="flex flex-col sm:flex-row gap-3">
-<input class="flex-1 bg-surface-dark border border-white/10 rounded-lg px-5 h-12 text-white placeholder-beige-dim/50 focus:outline-none focus:border-beige-text focus:ring-1 focus:ring-beige-text transition-all" placeholder="Enter your email address" type="email"/>
-<button class="bg-beige-text text-black font-bold px-8 h-12 rounded-lg hover:bg-white transition-colors whitespace-nowrap" type="button">
-                            Join Waitlist
-                        </button>
-</form>
-<p class="text-white/30 text-xs mt-4">No spam. Unsubscribe anytime.</p>
+<p class="text-beige-dim text-lg mb-6">Join the waitlist to get early access to our beta and receive your first itinerary for free.</p>
+<a href="/contactUs" class="inline-flex items-center gap-2 px-6 py-3 bg-beige-text text-black font-bold rounded-lg hover:bg-white transition-all">
+Get Beta Access
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
 </div>
 </div>
 </div>
 <footer class="bg-black border-t border-white/5 py-12 px-6">
 <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-white/50">flight_takeoff</span>
-<span class="text-white font-bold text-lg">WanderAI</span>
+<div class="flex items-center gap-3">
+<img src="tourLOGO.jpeg" alt="Tour Logo" class="h-8 w-auto object-contain opacity-50"/>
+                    <span class="text-white font-bold text-lg">Tour</span>
 </div>
                 <div class="flex flex-wrap justify-center gap-8 text-sm">
-                    <a class="text-beige-dim hover:text-white transition-colors" href="#">Privacy Policy</a>
-                    <a class="text-beige-dim hover:text-white transition-colors" href="#">Terms of Service</a>
-                    <a class="text-beige-dim hover:text-white transition-colors" href="contactUs.html">Contact Us</a>
+                    <a class="text-beige-dim hover:text-white transition-colors" href="/contactUs">Contact Us</a>
                 </div>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]">photo_camera</span>
-</a>
-<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
-</a>
-<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]">music_note</span>
-</a>
-</div>
-</div>
-<div class="text-center mt-10 text-white/20 text-sm">
-<p>© 2024 WanderAI Inc. All rights reserved.</p>
 </div>
 </footer>
 </div>
