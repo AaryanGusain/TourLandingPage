@@ -5,7 +5,7 @@
 <title>About Us - Tour</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -21,7 +21,7 @@
                         "surface-dark": "#0a0a0a","border-beige": "#383835"
                     },
                     fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"]
+                        "display": ["Inter", "sans-serif"]
                     },
                     borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
                 },
@@ -152,10 +152,10 @@
 <span class="text-xs font-medium text-white uppercase tracking-wider">Our Mission</span>
 </div>
 <h1 class="text-white type-h1 tracking-tight">
-                                        Reimagining Travel through <span class="text-primary italic font-semibold">Data</span>
+                                        Reimagining Discovery through <span class="text-primary italic font-semibold">Taste.</span>
 </h1>
 <h2 class="text-beige-dim type-body measure">
-                                        We are Tour. We turn your digital footprint into the perfect physical journey. Experience travel designed by AI, curated specifically for your unique tastes.
+                                        We are Tour. We turn the content you share into real-world local experiences. Discover cafes, restaurants, and hidden gems curated by AI to match your unique vibe.
                                     </h2>
 </div>
 <!-- Team Photos -->
@@ -179,37 +179,11 @@
 </div>
 </div>
 </div>
-<div class="flex gap-4 mt-8">
-<button id="storyToggle" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-white text-black text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary transition-colors">
-<span class="truncate">Our Story</span>
-</button>
-</div>
-<div id="storyContent" class="hidden mt-8">
-<div class="flex flex-col @[864px]:flex-row gap-8 p-6 bg-surface-dark border border-white/10 rounded-xl">
-<!-- Team Photos in Story -->
-<div class="grid grid-cols-2 gap-4 max-w-xs mx-auto @[864px]:mx-0">
-<div class="flex flex-col gap-2 group">
-<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-xl group-hover:scale-105 transition-all duration-500 relative overflow-hidden" data-alt="Portrait of Jai Singh" style='background-image: url("JaiSingh.jpeg");'>
-</div>
-<div class="text-center">
-<p class="text-white text-sm font-bold">Jai Singh</p>
-<p class="text-beige-text text-xs">CEO</p>
-</div>
-</div>
-<div class="flex flex-col gap-2 group">
-<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-xl group-hover:scale-105 transition-all duration-500 relative overflow-hidden" data-alt="Portrait of Aaryan Gusain" style='background-image: url("aaryanGusain.jpeg");'>
-</div>
-<div class="text-center">
-<p class="text-white text-sm font-bold">Aaryan Gusain</p>
-<p class="text-beige-text text-xs">CTO</p>
-</div>
-</div>
-</div>
-<!-- Story Text -->
-<div class="flex-1">
-<p class="text-white leading-relaxed">
-<strong>Jai:</strong> I've spent years traveling solo, and every time I'd spend hours scrolling through social media just to find those hidden local spots. Those always ended up being the most memorable parts of my trips. Trip planning felt fragmented and impersonal, and I knew there had to be a better way.<br/><br/>
-<strong>Aaryan:</strong> Jai and I have always bonded over hands-on, creative work rather than traditional classroom learning. As we both began to travel more and experience finding novel places firsthand, it became clear the process was hectic, impersonal, and unnecessarily hard. We saw an opportunity to give people authentic, personalized travel experiences without the usual stress, hassle, or time commitment. That's why we built Tour.
+<div class="mt-12">
+<div class="max-w-3xl mx-auto text-center">
+<h3 class="text-white text-2xl font-bold mb-6">Our Story</h3>
+<p class="text-beige-dim leading-relaxed text-base">
+We've spent years scrolling through social media to find those hidden local spots—the cozy cafes, the under-the-radar restaurants. Those always ended up being the most memorable experiences. But the process was fragmented and time-consuming, and we knew there had to be a better way. As we both began exploring our cities more, it became clear that discovering novel local spots was unnecessarily hard. We saw an opportunity to turn the content people already love into real-world experiences—no stress, no endless scrolling. That's why we built Tour.
 </p>
 </div>
 </div>
@@ -219,13 +193,6 @@
 </div>
 </div>
 </div>
-</div>
-<script>
-document.getElementById('storyToggle').addEventListener('click', function() {
-    const content = document.getElementById('storyContent');
-    content.classList.toggle('hidden');
-});
-</script>
 <div class="layout-container flex w-full flex-col bg-black border-t border-white/5">
 <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-20">
 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
@@ -245,7 +212,7 @@ document.getElementById('storyToggle').addEventListener('click', function() {
 </div>
 <div class="flex flex-col gap-2">
 <h3 class="text-white text-lg font-bold leading-tight">Personalization</h3>
-<p class="text-beige-dim text-sm font-normal leading-relaxed">Itineraries that fit you like a glove, constructed from the nuances of your unique digital footprint.</p>
+<p class="text-beige-dim text-sm font-normal leading-relaxed">Recommendations that fit your vibe perfectly, decoded from the Reels and TikToks you share with us.</p>
 </div>
 </div>
 <div class="flex flex-1 gap-4 rounded-xl border border-white/10 bg-black p-6 flex-col hover:border-white transition-colors group">
@@ -254,7 +221,7 @@ document.getElementById('storyToggle').addEventListener('click', function() {
 </div>
 <div class="flex flex-col gap-2">
 <h3 class="text-white text-lg font-bold leading-tight">Discovery</h3>
-<p class="text-beige-dim text-sm font-normal leading-relaxed">Uncovering hidden gems that align with your true interests, steering you away from tourist traps.</p>
+<p class="text-beige-dim text-sm font-normal leading-relaxed">Uncovering novel local spots—cafes, restaurants, hidden gems—that align with your aesthetic, steering you away from generic lists.</p>
 </div>
 </div>
 <div class="flex flex-1 gap-4 rounded-xl border border-white/10 bg-black p-6 flex-col hover:border-white transition-colors group">
@@ -263,7 +230,7 @@ document.getElementById('storyToggle').addEventListener('click', function() {
 </div>
 <div class="flex flex-col gap-2">
 <h3 class="text-white text-lg font-bold leading-tight">Privacy</h3>
-<p class="text-beige-dim text-sm font-normal leading-relaxed">Your data is used solely to enhance your journey. We employ strict, bank-level privacy protocols.</p>
+<p class="text-beige-dim text-sm font-normal leading-relaxed">What you share with Tour stays with Tour. We employ strict, bank-level privacy protocols to protect your data.</p>
 </div>
 </div>
 </div>
