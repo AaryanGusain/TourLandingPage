@@ -27,28 +27,19 @@
   overflow: visible;
 }
 
-/* Make page content sit above stars but allow stars to show through semi-transparent areas */
+/* Make page content sit above stars */
 body {
   background: transparent !important;
   position: relative;
   z-index: 2;
 }
 
-/* Ensure main content containers allow stars to peek through */
+/* Ensure main content containers sit above stars */
 body > div,
 body > main,
 body > header,
 body > footer {
   position: relative;
   z-index: 2;
-}
-
-/* Semi-transparent backgrounds for sections to show stars */
-.bg-black {
-  background-color: rgba(0, 0, 0, 0.85) !important;
-}
-
-.bg-surface-dark {
-  background-color: rgba(10, 10, 10, 0.9) !important;
 }
 
