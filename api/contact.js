@@ -17,9 +17,12 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { name, email, subject, message } = req.body || {};
+    const { name, email, subject, reason, message } = req.body || {};
+    const resolvedSubject = subject || reason;
 
-    if (!name || !email || !subject || !message) {
+    // Only require the truly required fields.
+    // `message` is optional in the UI and `reason` is the UI's "subject".
+    if (!name || !email || !resolvedSubject) {
       return json(res, 400, { error: "Missing required fields" });
     }
     if (!isValidEmail(email)) {
@@ -44,17 +47,17 @@ module.exports = async (req, res) => {
     });
 
     const to = ["aaryangusain134@gmail.com", "jaisingh9999@gmail.com"];
-    const safeSubject = String(subject).slice(0, 200);
+    const safeSubject = String(resolvedSubject).slice(0, 200);
 
     const text = [
       "New message from Tour contact form",
       "",
       `Name: ${name}`,
       `Email: ${email}`,
-      `Subject: ${subject}`,
+      `Subject: ${resolvedSubject}`,
       "",
       "Message:",
-      String(message),
+      String(message || "(no message provided)"),
     ].join("\n");
 
     await transporter.sendMail({

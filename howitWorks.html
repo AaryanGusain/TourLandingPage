@@ -57,13 +57,66 @@
                         <a class="text-sm font-medium text-beige-text hover:text-white transition-colors" href="/aboutUs">About Us</a>
                         <a class="text-sm font-medium text-beige-text hover:text-white transition-colors" href="/contactUs">Contact</a>
                     </div>
-<div class="flex gap-3">
+<div class="flex items-center gap-3">
+    <!-- Mobile hamburger button -->
+    <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 text-beige-text hover:text-white transition-colors" aria-label="Open menu">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+    </button>
 <a href="/contactUs" class="flex h-10 px-5 items-center justify-center bg-white text-black text-sm font-bold hover:bg-primary hover:text-black transition-all">
                     Join Waitlist
                 </a>
 </div>
 </div>
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="hidden fixed inset-0 bg-black/95 backdrop-blur-md z-[60] md:hidden">
+    <div class="flex flex-col h-full">
+        <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+            <a href="/" class="flex items-center gap-3">
+                <h2 class="text-white text-xl font-bold tracking-tight">Tour</h2>
+            </a>
+            <button id="mobile-menu-close" class="flex items-center justify-center w-10 h-10 text-beige-text hover:text-white transition-colors" aria-label="Close menu">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-2 p-6">
+            <a class="text-beige-text hover:text-white text-lg font-medium transition-colors py-3 border-b border-white/10" href="/">Home</a>
+            <a class="text-beige-text hover:text-white text-lg font-medium transition-colors py-3 border-b border-white/10" href="/aboutUs">About Us</a>
+            <a class="text-beige-text hover:text-white text-lg font-medium transition-colors py-3 border-b border-white/10" href="/contactUs">Contact</a>
+        </nav>
+        <div class="mt-auto p-6">
+            <a href="/contactUs" class="flex items-center justify-center rounded-lg h-12 px-5 bg-beige-text hover:bg-white transition-all text-black text-base font-bold w-full">
+                Join Waitlist
+            </a>
+        </div>
+    </div>
+</div>
 </header>
+<script>
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuBtn?.addEventListener('click', function() {
+        mobileMenu?.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    menuClose?.addEventListener('click', function() {
+        mobileMenu?.classList.add('hidden');
+        document.body.style.overflow = '';
+    });
+    
+    // Close menu when clicking a link
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu?.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+    });
+});
+</script>
 <main class="flex flex-col items-center">
 <section class="w-full max-w-7xl px-6 py-16 md:py-20 flex flex-col items-center text-center">
 <div class="inline-flex items-center gap-2 px-3 py-1 bg-border-dark border border-white/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
@@ -74,7 +127,7 @@
                 Turn your Shares into <span class="text-primary">Real Experiences</span>
 </h1>
 <p class="text-lg text-beige-dim max-w-2xl leading-relaxed mb-10">
-                Stop scrolling, start experiencing. We analyze the Reels, TikToks, pinned places, notes, and quizzes you share to curate daily recommendations for cafes, restaurants, and hidden gems near you.
+                Stop scrolling, start experiencing. We analyze the Reels, TikToks, pinned places, notes, and an optional quiz you share to curate daily recommendations for cafes, restaurants, and hidden gems near you.
             </p>
 <div class="relative w-full max-w-5xl aspect-[16/9] md:aspect-[21/9] overflow-hidden border border-white/10 group bg-surface-dark">
 <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
@@ -99,7 +152,7 @@
 <span class="text-6xl font-light text-border-dark group-hover:text-primary transition-colors">01</span>
 <h3 class="text-2xl font-bold text-white">Share What Inspires You</h3>
 <p class="text-beige-dim leading-relaxed max-w-sm">
-                                Share Reels, TikToks, pinned places on maps, individual notes, or take personalized quizzes. We analyze the aesthetic, cuisine, and vibe of what resonates with you.
+                                Share Reels, TikToks, pinned places on maps, individual notes, or take an optional personalized quiz. We analyze the aesthetic, cuisine, and vibe of what resonates with you.
                             </p>
 </div>
 </div>

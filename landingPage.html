@@ -133,12 +133,65 @@
                     <a class="text-beige-text hover:text-white text-sm font-medium transition-colors" href="/contactUs">Contact</a>
                 </div>
                 <div class="flex items-center gap-4">
+                    <!-- Mobile hamburger button -->
+                    <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 text-beige-text hover:text-white transition-colors" aria-label="Open menu">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
 <a href="/contactUs" class="flex items-center justify-center rounded-lg h-10 px-5 bg-beige-text hover:bg-white transition-all text-black text-sm font-bold border border-transparent">
                         Join Waitlist
                     </a>
 </div>
 </div>
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="hidden fixed inset-0 bg-black/95 backdrop-blur-md z-[60] md:hidden">
+    <div class="flex flex-col h-full">
+        <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+            <a href="/" class="flex items-center gap-3">
+                <h2 class="text-white text-xl font-bold tracking-tight">Tour</h2>
+            </a>
+            <button id="mobile-menu-close" class="flex items-center justify-center w-10 h-10 text-beige-text hover:text-white transition-colors" aria-label="Close menu">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-2 p-6">
+            <a class="text-beige-text hover:text-white text-lg font-medium transition-colors py-3 border-b border-white/10" href="/">Home</a>
+            <a class="text-beige-text hover:text-white text-lg font-medium transition-colors py-3 border-b border-white/10" href="/aboutUs">About Us</a>
+            <a class="text-beige-text hover:text-white text-lg font-medium transition-colors py-3 border-b border-white/10" href="/contactUs">Contact</a>
+        </nav>
+        <div class="mt-auto p-6">
+            <a href="/contactUs" class="flex items-center justify-center rounded-lg h-12 px-5 bg-beige-text hover:bg-white transition-all text-black text-base font-bold w-full">
+                Join Waitlist
+            </a>
+        </div>
+    </div>
 </div>
+</div>
+<script>
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuBtn?.addEventListener('click', function() {
+        mobileMenu?.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    menuClose?.addEventListener('click', function() {
+        mobileMenu?.classList.add('hidden');
+        document.body.style.overflow = '';
+    });
+    
+    // Close menu when clicking a link
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu?.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+    });
+});
+</script>
 <div class="flex-1 flex justify-center items-center py-16 md:py-20 px-4 md:px-10 bg-black">
 <div class="flex flex-col max-w-[1200px] w-full gap-12 lg:flex-row lg:items-center">
 <div class="flex flex-col gap-6 flex-1 text-left lg:pr-10">
@@ -152,31 +205,34 @@
 <span class="text-beige-text">Turned Into Personal Experiences</span>
 </h1>
 <p class="text-beige-dim type-body measure">
-                        Stop scrolling, start experiencing. Our AI analyzes the Reels, TikToks, pinned places, notes, and quizzes you share to curate daily, novel recommendations for cafes, dining, and hidden gems near you.
+                        Stop scrolling, start experiencing. Our AI analyzes the Reels, TikToks, pinned places, notes, and an optional quiz you share to curate daily, novel recommendations for cafes, dining, and hidden gems near you.
                     </p>
 </div>
 <div class="flex-1 w-full relative group">
 <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-dark border border-white/10">
 <div class="absolute inset-0 bg-cover bg-center opacity-80 mix-blend-normal" data-alt="Kyoto cafe aesthetic" style="background-image: url('Kyoto Cafe Picture.jpg');"></div>
-<div class="absolute top-8 left-8 flex items-center gap-2 bg-beige-text/90 backdrop-blur-sm px-3 py-2 rounded-full">
-<span class="material-symbols-outlined text-black text-base">schedule</span>
-<span class="text-xs font-bold text-black">Open Now</span>
+<!-- Open Now chip - dark style matching other overlays -->
+<div class="absolute top-4 left-4 md:top-8 md:left-8 flex items-center gap-2 bg-black/90 backdrop-blur-sm px-3 py-2 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-beige-text text-sm md:text-base">schedule</span>
+<span class="text-[10px] md:text-xs font-bold text-white">Open Now</span>
 </div>
-<div class="absolute top-8 right-8 bg-black/90 backdrop-blur-sm p-4 rounded-lg border border-white/10 shadow-xl max-w-[200px]">
-<div class="flex items-center gap-2 mb-2">
-<span class="material-symbols-outlined text-beige-text text-sm">auto_awesome</span>
-<span class="text-xs font-bold text-white uppercase">AI Match: 98%</span>
+<!-- AI Match card - responsive sizing -->
+<div class="absolute top-4 right-4 md:top-8 md:right-8 bg-black/90 backdrop-blur-sm p-2 md:p-4 rounded-lg border border-white/10 shadow-xl max-w-[140px] md:max-w-[200px]">
+<div class="flex items-center gap-1 md:gap-2 mb-1 md:mb-2">
+<span class="material-symbols-outlined text-beige-text text-xs md:text-sm">auto_awesome</span>
+<span class="text-[9px] md:text-xs font-bold text-white uppercase">AI Match: 98%</span>
 </div>
-<p class="text-white text-sm font-bold">Hidden Kyoto Cafe</p>
-<p class="text-beige-dim text-xs">Based on your quiet, classical vibe and love for traditional cafes.</p>
+<p class="text-white text-xs md:text-sm font-bold">Hidden Kyoto Cafe</p>
+<p class="text-beige-dim text-[10px] md:text-xs leading-tight">Based on your quiet, classical vibe and love for traditional cafes.</p>
 </div>
-<div class="absolute bottom-10 left-8 bg-black/90 backdrop-blur-sm p-4 rounded-lg border border-white/10 shadow-xl flex items-center gap-4 pr-6">
-<div class="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-beige-text">
-<span class="material-symbols-outlined">flight</span>
+<!-- Hidden Kyoto Spots card - responsive sizing -->
+<div class="absolute bottom-4 left-4 md:bottom-10 md:left-8 bg-black/90 backdrop-blur-sm p-2 md:p-4 rounded-lg border border-white/10 shadow-xl flex items-center gap-2 md:gap-4 pr-3 md:pr-6">
+<div class="h-8 w-8 md:h-10 md:w-10 rounded-full bg-white/10 flex items-center justify-center text-beige-text">
+<span class="material-symbols-outlined text-sm md:text-base">flight</span>
 </div>
 <div>
-<p class="text-white text-sm font-bold">Hidden Kyoto Spots</p>
-<p class="text-beige-dim text-xs">Curated from your vibe</p>
+<p class="text-white text-xs md:text-sm font-bold">Hidden Kyoto Spots</p>
+<p class="text-beige-dim text-[10px] md:text-xs">Curated from your vibe</p>
 </div>
 </div>
 </div>
@@ -200,7 +256,7 @@
 <span class="material-symbols-outlined text-white group-hover:text-beige-text transition-colors">share</span>
 </div>
 <h3 class="text-white font-bold text-lg mb-2">Share to Tour</h3>
-<p class="text-beige-dim text-sm leading-relaxed">Share Reels, TikToks, pinned places on maps, individual notes, or take personalized quizzes. We analyze the aesthetic, cuisine, and vibe of what inspires you.</p>
+<p class="text-beige-dim text-sm leading-relaxed">Share Reels, TikToks, pinned places on maps, individual notes, or take an optional personalized quiz. We analyze the aesthetic, cuisine, and vibe of what inspires you.</p>
 </div>
 <div class="p-6 rounded-xl bg-surface-dark border border-white/5 hover:border-beige-text/30 transition-all group">
 <div class="w-12 h-12 rounded-lg bg-black flex items-center justify-center mb-4 group-hover:bg-white/5 transition-colors">

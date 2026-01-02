@@ -6,8 +6,8 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 0;
-  background: transparent;
+  z-index: 1;
+  background: black;
 }
 
 /* Canvas-based Stars Background */
@@ -25,5 +25,30 @@
   width: 100%;
   height: 100%;
   overflow: visible;
+}
+
+/* Make page content sit above stars but allow stars to show through semi-transparent areas */
+body {
+  background: transparent !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure main content containers allow stars to peek through */
+body > div,
+body > main,
+body > header,
+body > footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* Semi-transparent backgrounds for sections to show stars */
+.bg-black {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.bg-surface-dark {
+  background-color: rgba(10, 10, 10, 0.9) !important;
 }
 

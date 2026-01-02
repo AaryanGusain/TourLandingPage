@@ -133,12 +133,65 @@
                     <a class="text-beige-text hover:text-white text-sm font-medium transition-colors" href="/contactUs">Contact</a>
                 </div>
                 <div class="flex items-center gap-4">
+                    <!-- Mobile hamburger button -->
+                    <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 text-beige-text hover:text-white transition-colors" aria-label="Open menu">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
 <a href="/contactUs" class="flex items-center justify-center rounded-lg h-10 px-5 bg-beige-text hover:bg-white transition-all text-black text-sm font-bold border border-transparent">
                         Join Waitlist
                     </a>
 </div>
 </div>
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="hidden fixed inset-0 bg-black/95 backdrop-blur-md z-[60] md:hidden">
+    <div class="flex flex-col h-full">
+        <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+            <a href="/" class="flex items-center gap-3">
+                <h2 class="text-white text-xl font-bold tracking-tight">Tour</h2>
+            </a>
+            <button id="mobile-menu-close" class="flex items-center justify-center w-10 h-10 text-beige-text hover:text-white transition-colors" aria-label="Close menu">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-2 p-6">
+            <a class="text-beige-text hover:text-white text-lg font-medium transition-colors py-3 border-b border-white/10" href="/">Home</a>
+            <a class="text-beige-text hover:text-white text-lg font-medium transition-colors py-3 border-b border-white/10" href="/aboutUs">About Us</a>
+            <a class="text-beige-text hover:text-white text-lg font-medium transition-colors py-3 border-b border-white/10" href="/contactUs">Contact</a>
+        </nav>
+        <div class="mt-auto p-6">
+            <a href="/contactUs" class="flex items-center justify-center rounded-lg h-12 px-5 bg-beige-text hover:bg-white transition-all text-black text-base font-bold w-full">
+                Join Waitlist
+            </a>
+        </div>
+    </div>
 </div>
+</div>
+<script>
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuBtn?.addEventListener('click', function() {
+        mobileMenu?.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    menuClose?.addEventListener('click', function() {
+        mobileMenu?.classList.add('hidden');
+        document.body.style.overflow = '';
+    });
+    
+    // Close menu when clicking a link
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu?.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+    });
+});
+</script>
 <main class="px-6 py-16 md:py-20">
     <section class="max-w-4xl mx-auto text-center mb-16">
         <p class="inline-flex items-center gap-2 px-3 py-1 border border-white/10 uppercase text-xs tracking-[0.3em] text-primary/80">
@@ -207,6 +260,8 @@
     const payload = {
       name: document.getElementById("contact-name")?.value?.trim(),
       email: document.getElementById("contact-email")?.value?.trim(),
+      // API expects `subject`; keep `reason` too for backwards compatibility.
+      subject: document.getElementById("contact-reason")?.value?.trim(),
       reason: document.getElementById("contact-reason")?.value?.trim(),
       message: document.getElementById("contact-message")?.value?.trim(),
     };
