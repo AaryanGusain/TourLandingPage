@@ -1,0 +1,635 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Typography Scale */
+  --t-h1-desktop: 60px;
+  --t-h1-mobile: 40px;
+  --t-h2-desktop: 36px;
+  --t-h2-mobile: 28px;
+  --t-h3-desktop: 20px;
+  --t-h3-mobile: 18px;
+  --t-body: 16px;
+  --t-label: 14px;
+  --lh-tight: 1.2;
+  --lh-normal: 1.6;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Apple-Style Shadows */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-xl: 0 12px 36px rgba(0, 0, 0, 0.45);
+
+  /* Navbar height for grid offset */
+  --navbar-height: 73px;
+}
+
+/* Typography Classes */
+.type-h1 {
+  font-size: var(--t-h1-mobile);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+}
+
+@media (min-width: 768px) {
+  .type-h1 {
+    font-size: var(--t-h1-desktop);
+  }
+}
+
+.type-h2 {
+  font-size: var(--t-h2-mobile);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+}
+
+@media (min-width: 768px) {
+  .type-h2 {
+    font-size: var(--t-h2-desktop);
+  }
+}
+
+.type-h3 {
+  font-size: var(--t-h3-mobile);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-tight);
+}
+
+@media (min-width: 768px) {
+  .type-h3 {
+    font-size: var(--t-h3-desktop);
+  }
+}
+
+.type-body {
+  font-size: var(--t-body);
+  line-height: var(--lh-normal);
+}
+
+.type-label {
+  font-size: var(--t-label);
+  font-weight: var(--fw-medium);
+}
+
+.measure {
+  max-width: 70ch;
+}
+
+/* ============================================
+   BASE GRID LINES - PUSHED TO SCREEN EDGES
+   ============================================ */
+
+/* Edge vertical lines - positioned at screen edges */
+.grid-edge-lines {
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.grid-edge-lines::before,
+.grid-edge-lines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.15) 10%,
+      rgba(255, 255, 255, 0.15) 90%,
+      transparent 100%);
+}
+
+/* Left edge line - pushed further towards screen edge (40% further out) */
+.grid-edge-lines::before {
+  left: calc(50% - 870px);
+}
+
+/* Right edge line - pushed further towards screen edge (40% further out) */
+.grid-edge-lines::after {
+  right: calc(50% - 870px);
+}
+
+@media (max-width: 1280px) {
+  .grid-edge-lines::before {
+    left: 8px;
+  }
+
+  .grid-edge-lines::after {
+    right: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-edge-lines::before {
+    left: 4px;
+  }
+
+  .grid-edge-lines::after {
+    right: 4px;
+  }
+}
+
+/* ============================================
+   DECORATIVE CIRCLES
+   ============================================ */
+.grid-circle {
+  position: fixed;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.grid-circle-1 {
+  width: 300px;
+  height: 300px;
+  top: 15%;
+  right: -100px;
+}
+
+.grid-circle-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 20%;
+  left: -60px;
+}
+
+.grid-circle-3 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 5%;
+}
+
+/* ============================================
+   PAGE-SPECIFIC GRID ELEMENTS
+   Applied via class on page containers
+   ============================================ */
+
+/* Landing page specific accents */
+.page-landing .grid-accent-1 {
+  position: absolute;
+  top: 200px;
+  left: 20%;
+  width: 1px;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+}
+
+.page-landing .grid-accent-2 {
+  position: absolute;
+  top: 400px;
+  right: 15%;
+  width: 1px;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.08), transparent);
+  pointer-events: none;
+}
+
+/* About page specific - horizontal accent */
+.page-about .grid-accent-h {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.06), transparent);
+  pointer-events: none;
+}
+
+/* Contact page specific */
+.page-contact .grid-accent-1 {
+  position: absolute;
+  top: 30%;
+  left: 8%;
+  width: 1px;
+  height: 250px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+}
+
+/* ============================================
+   GLASSMORPHISM EFFECT
+   ============================================ */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   ENHANCED CARD SHADOWS
+   ============================================ */
+.card-shadow {
+  box-shadow: var(--shadow-lg);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-shadow:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   REFLECTION EFFECT
+   ============================================ */
+.reflection-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.reflection-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+  transition: left 0.5s ease;
+}
+
+.reflection-hover:hover::after {
+  left: 100%;
+}
+
+/* ============================================
+   TEXT HIGHLIGHT BOX
+   ============================================ */
+.highlight-box {
+  border: 1px solid rgba(227, 225, 213, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(227, 225, 213, 0.05);
+}
+
+/* ============================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================ */
+
+.scroll-reveal {
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: var(--scroll-duration, 1200ms);
+  transition-delay: var(--scroll-delay, 0ms);
+}
+
+.scroll-reveal-hidden {
+  opacity: 0;
+}
+
+.scroll-reveal-visible {
+  opacity: 1;
+}
+
+.scroll-fade-up.scroll-reveal-hidden {
+  transform: translateY(40px);
+}
+
+.scroll-fade-up.scroll-reveal-visible {
+  transform: translateY(0);
+}
+
+.scroll-fade-down.scroll-reveal-hidden {
+  transform: translateY(-40px);
+}
+
+.scroll-fade-down.scroll-reveal-visible {
+  transform: translateY(0);
+}
+
+.scroll-fade-left.scroll-reveal-hidden {
+  transform: translateX(-40px);
+}
+
+.scroll-fade-left.scroll-reveal-visible {
+  transform: translateX(0);
+}
+
+.scroll-fade-right.scroll-reveal-hidden {
+  transform: translateX(40px);
+}
+
+.scroll-fade-right.scroll-reveal-visible {
+  transform: translateX(0);
+}
+
+.scroll-scale.scroll-reveal-hidden {
+  transform: scale(0.9);
+}
+
+.scroll-scale.scroll-reveal-visible {
+  transform: scale(1);
+}
+
+.scroll-fade.scroll-reveal-hidden {
+  transform: none;
+}
+
+.scroll-fade.scroll-reveal-visible {
+  transform: none;
+}
+
+/* ============================================
+   ENHANCED ANIMATIONS
+   ============================================ */
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSubtle {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(227, 225, 213, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 20px 4px rgba(227, 225, 213, 0.15);
+  }
+}
+
+/* Animation classes */
+.anim-hero {
+  animation: heroFadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.anim-primary {
+  animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: 0.15s;
+}
+
+.anim-secondary {
+  animation: fadeInSubtle 0.6s ease-out backwards;
+  animation-delay: 0.3s;
+}
+
+.anim-scale {
+  animation: scaleIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: 0.2s;
+}
+
+.anim-left {
+  animation: slideInLeft 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.anim-right {
+  animation: slideInRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: 0.1s;
+}
+
+.anim-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.anim-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.anim-stagger>*:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.anim-stagger>*:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.anim-stagger>*:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.anim-stagger>*:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.anim-stagger>*:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.anim-stagger>*:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.anim-stagger-natural>*:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.anim-stagger-natural>*:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.anim-stagger-natural>*:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+.anim-stagger-natural>*:nth-child(4) {
+  animation-delay: 0.38s;
+}
+
+.anim-stagger-natural>*:nth-child(5) {
+  animation-delay: 0.52s;
+}
+
+.anim-stagger-natural>*:nth-child(6) {
+  animation-delay: 0.63s;
+}
+
+.animate-item {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.animate-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.animate-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.animate-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.animate-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.animate-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.animate-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* ============================================
+   HERO SECTION OVERLAY
+   ============================================ */
+.hero-section {
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227, 225, 213, 0.05) 0%, transparent 70%);
+  top: -100px;
+  left: -50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-section>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e3e1d5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   DECORATIVE BACKGROUND CIRCLES
+   For use in page content
+   ============================================ */
+.bg-circle-white {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 40%, transparent 70%);
+}
+
+.bg-circle-glow {
+  background: radial-gradient(circle, rgba(227, 225, 213, 0.12) 0%, rgba(227, 225, 213, 0.04) 40%, transparent 70%);
+}
