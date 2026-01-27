@@ -56,9 +56,6 @@ export default function Contact() {
 
     return (
         <>
-            {/* Page-specific grid accent */}
-            <div className="grid-accent-1" aria-hidden="true" />
-
             <main className="px-6 py-16 md:py-20">
                 <section className="max-w-4xl mx-auto text-center mb-16">
                     <p className="inline-flex items-center gap-2 px-3 py-1 border border-white/10 uppercase text-xs tracking-[0.3em] text-primary/80 anim-secondary">

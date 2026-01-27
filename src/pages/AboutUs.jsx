@@ -46,42 +46,6 @@ export default function AboutUs() {
                                     }}
                                     aria-hidden="true"
                                 />
-                                {/* Grid line - circle edge top */}
-                                <div
-                                    className="absolute left-1/2 top-1/2 -translate-x-1/2 w-[300px] md:w-[400px] h-[1px]"
-                                    style={{
-                                        marginTop: '-210px',
-                                        background: 'linear-gradient(to right, transparent 0%, rgba(255,255,255,0.25) 30%, rgba(255,255,255,0.25) 70%, transparent 100%)'
-                                    }}
-                                    aria-hidden="true"
-                                />
-                                {/* Grid line - circle edge bottom */}
-                                <div
-                                    className="absolute left-1/2 top-1/2 -translate-x-1/2 w-[300px] md:w-[400px] h-[1px]"
-                                    style={{
-                                        marginTop: '210px',
-                                        background: 'linear-gradient(to right, transparent 0%, rgba(255,255,255,0.25) 30%, rgba(255,255,255,0.25) 70%, transparent 100%)'
-                                    }}
-                                    aria-hidden="true"
-                                />
-                                {/* Grid line - circle edge left */}
-                                <div
-                                    className="absolute left-1/2 top-1/2 -translate-y-1/2 w-[1px] h-[300px] md:h-[400px]"
-                                    style={{
-                                        marginLeft: '-210px',
-                                        background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.25) 30%, rgba(255,255,255,0.25) 70%, transparent 100%)'
-                                    }}
-                                    aria-hidden="true"
-                                />
-                                {/* Grid line - circle edge right */}
-                                <div
-                                    className="absolute left-1/2 top-1/2 -translate-y-1/2 w-[1px] h-[300px] md:h-[400px]"
-                                    style={{
-                                        marginLeft: '210px',
-                                        background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.25) 30%, rgba(255,255,255,0.25) 70%, transparent 100%)'
-                                    }}
-                                    aria-hidden="true"
-                                />
 
                                 <div className="grid grid-cols-2 gap-6 max-w-sm mx-auto relative z-10">
                                     <ScrollReveal animation="fade-up" delay={0} duration={1200}>
