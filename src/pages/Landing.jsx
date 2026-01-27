@@ -37,7 +37,6 @@ export default function Landing() {
     return (
         <>
             {/* Page-specific grid accents */}
-            <div className="grid-accent-1" aria-hidden="true" />
             <div className="grid-accent-2" aria-hidden="true" />
 
             {/* Hero Section */}
