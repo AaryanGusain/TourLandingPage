@@ -53,13 +53,13 @@ export default function Landing() {
                         </Link>
                     </div>
 
-                    {/* Headline with selective glass boxes */}
-                    <div className="anim-hero mb-12">
-                        <h1 className="text-white type-h1 tracking-tight mb-3">
-                            Your <GlassCard className="inline-block px-4 py-2">Personal Vibe</GlassCard>
+                    {/* Headline */}
+                    <div className="mb-12 text-left">
+                        <h1 className="text-white type-h1 tracking-tight mb-3 anim-hero">
+                            Your Personal Vibe
                         </h1>
-                        <h1 className="text-white type-h1 tracking-tight">
-                            Turned Into <GlassCard className="inline-block px-4 py-2"><span className="text-beige-text">Personal Experiences</span></GlassCard>
+                        <h1 className="text-white type-h1 tracking-tight anim-hero" style={{ animationDelay: '0.5s' }}>
+                            Turned Into <span className="text-beige-text anim-scale" style={{ animationDelay: '1.2s', display: 'inline-block' }}>Personal Experiences</span>
                         </h1>
                     </div>
 

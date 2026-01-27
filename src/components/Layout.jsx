@@ -31,9 +31,6 @@ export default function Layout({ children }) {
             <Navbar />
 
             <div className={`relative min-h-screen w-full bg-black text-white font-display overflow-x-hidden antialiased ${getPageClass()}`}>
-                {/* Grid lines overlay - pushed to screen edges */}
-                <div className="grid-edge-lines" aria-hidden="true" />
-
                 {/* Decorative circles */}
                 <div className="grid-circle grid-circle-1" aria-hidden="true" />
                 <div className="grid-circle grid-circle-2" aria-hidden="true" />
