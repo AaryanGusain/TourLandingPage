@@ -8,7 +8,7 @@ function isValidEmail(email) {
   return typeof email === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return json(res, 405, { error: "Method not allowed" });
@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
       });
     }
 
-    const to = ["aaryangusain134@gmail.com", "jaisingh9999@gmail.com"];
+    const to = ["aaryangusain134@gmail.com", "jairajsingh9999@gmail.com", "thetourtravelcompany@gmail.com"];
     const safeSubject = String(resolvedSubject).slice(0, 200);
 
     const text = [
