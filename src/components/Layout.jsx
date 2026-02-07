@@ -3,6 +3,9 @@ import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
+const ABOUT_PATHS = ['/about-us', '/about', '/aboutus', '/aboutUs'];
+const CONTACT_PATHS = ['/contact', '/contact-us', '/contactus', '/contactUs'];
+
 export default function Layout({ children }) {
     const location = useLocation();
 
@@ -13,16 +16,10 @@ export default function Layout({ children }) {
 
     // Determine page class for page-specific styling
     const getPageClass = () => {
-        switch (location.pathname) {
-            case '/':
-                return 'page-landing';
-            case '/aboutUs':
-                return 'page-about';
-            case '/contactUs':
-                return 'page-contact';
-            default:
-                return '';
-        }
+        if (location.pathname === '/') return 'page-landing';
+        if (ABOUT_PATHS.includes(location.pathname)) return 'page-about';
+        if (CONTACT_PATHS.includes(location.pathname)) return 'page-contact';
+        return '';
     };
 
     return (

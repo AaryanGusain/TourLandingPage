@@ -1,11 +1,15 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
+const ABOUT_PATHS = ['/about-us', '/about', '/aboutus', '/aboutUs'];
+const CONTACT_PATHS = ['/contact', '/contact-us', '/contactus', '/contactUs'];
+
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
 
     const isActive = (path) => location.pathname === path;
+    const isAnyActive = (paths) => paths.includes(location.pathname);
 
     return (
         <div className="w-full border-b border-white/10 bg-black/95 backdrop-blur-sm fixed top-0 left-0 right-0 z-[100]">
@@ -23,15 +27,15 @@ export default function Navbar() {
                         Home
                     </Link>
                     <Link
-                        to="/aboutUs"
-                        className={`text-sm font-medium transition-colors ${isActive('/aboutUs') ? 'text-white' : 'text-beige-text hover:text-white'
+                        to="/about-us"
+                        className={`text-sm font-medium transition-colors ${isAnyActive(ABOUT_PATHS) ? 'text-white' : 'text-beige-text hover:text-white'
                             }`}
                     >
                         About Us
                     </Link>
                     <Link
-                        to="/contactUs"
-                        className={`text-sm font-medium transition-colors ${isActive('/contactUs') ? 'text-white' : 'text-beige-text hover:text-white'
+                        to="/contact"
+                        className={`text-sm font-medium transition-colors ${isAnyActive(CONTACT_PATHS) ? 'text-white' : 'text-beige-text hover:text-white'
                             }`}
                     >
                         Contact
@@ -49,7 +53,7 @@ export default function Navbar() {
                     </button>
 
                     <Link
-                        to="/contactUs"
+                        to="/contact"
                         className="flex items-center justify-center rounded-lg h-10 px-5 bg-beige-text hover:bg-white transition-all text-black text-sm font-bold border border-transparent reflection-hover"
                     >
                         Join Waitlist
@@ -83,14 +87,14 @@ export default function Navbar() {
                                 Home
                             </Link>
                             <Link
-                                to="/aboutUs"
+                                to="/about-us"
                                 onClick={() => setMobileMenuOpen(false)}
                                 className="text-beige-text hover:text-white text-lg font-medium transition-colors py-3 border-b border-white/10"
                             >
                                 About Us
                             </Link>
                             <Link
-                                to="/contactUs"
+                                to="/contact"
                                 onClick={() => setMobileMenuOpen(false)}
                                 className="text-beige-text hover:text-white text-lg font-medium transition-colors py-3 border-b border-white/10"
                             >
@@ -100,7 +104,7 @@ export default function Navbar() {
 
                         <div className="mt-auto p-6">
                             <Link
-                                to="/contactUs"
+                                to="/contact"
                                 onClick={() => setMobileMenuOpen(false)}
                                 className="flex items-center justify-center rounded-lg h-12 px-5 bg-beige-text hover:bg-white transition-all text-black text-base font-bold w-full"
                             >

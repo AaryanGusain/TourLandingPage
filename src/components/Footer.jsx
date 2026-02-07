@@ -9,7 +9,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-wrap justify-center gap-8 text-sm">
                     <Link
-                        to="/contactUs"
+                        to="/contact"
                         className="text-beige-dim hover:text-white transition-colors"
                     >
                         Contact Us

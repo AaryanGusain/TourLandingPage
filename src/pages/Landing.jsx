@@ -45,7 +45,7 @@ export default function Landing() {
                     {/* Beta Access Badge */}
                     <div className="flex items-center gap-2 mb-6 anim-secondary">
                         <Link
-                            to="/contactUs"
+                            to="/contact"
                             className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-beige-text text-xs font-bold uppercase tracking-wider hover:bg-white/10 transition-all cursor-pointer highlight-box"
                         >
                             Beta Access Open
@@ -66,7 +66,7 @@ export default function Landing() {
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
                         {/* Hero media */}
                         <div className="flex-1 w-full relative group anim-left">
-                            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-dark border border-white/10 card-shadow reflection-hover anim-scale">
+                            <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-surface-dark border border-white/10 card-shadow reflection-hover anim-scale">
                                 <video
                                     className="absolute inset-0 w-full h-full object-cover"
                                     src={kyotoCafeVideo}
@@ -232,7 +232,7 @@ export default function Landing() {
                             Join the waitlist to get early access and receive your first personalized drop of local gems.
                         </p>
                         <Link
-                            to="/contactUs"
+                            to="/contact"
                             className="inline-flex items-center gap-2 px-6 py-3 bg-beige-text text-black font-bold rounded-lg hover:bg-white transition-all reflection-hover anim-glow"
                         >
                             Get Beta Access
