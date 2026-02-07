@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import kyotoCafe from '../assets/images/Kyoto Cafe Picture.jpg';
+import kyotoCafeVideo from '../assets/images/videos/0207(1).mp4';
 import { ScrollReveal } from '../hooks/useScrollReveal';
 
 // Glass card component - almost fully transparent with subtle shine
@@ -64,42 +64,17 @@ export default function Landing() {
 
                     {/* Image and description row */}
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
-                        {/* Kyoto Image */}
+                        {/* Hero media */}
                         <div className="flex-1 w-full relative group anim-left">
                             <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-dark border border-white/10 card-shadow reflection-hover anim-scale">
-                                <div
-                                    className="absolute inset-0 bg-cover bg-center opacity-80 mix-blend-normal"
-                                    style={{ backgroundImage: `url(${kyotoCafe})` }}
+                                <video
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                    src={kyotoCafeVideo}
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
                                 />
-
-                                {/* Open Now chip */}
-                                <div className="absolute top-4 left-4 md:top-8 md:left-8 flex items-center gap-2 bg-black/90 backdrop-blur-sm px-3 py-2 rounded-full border border-white/10 anim-float">
-                                    <span className="material-symbols-outlined text-beige-text text-sm md:text-base">schedule</span>
-                                    <span className="text-[10px] md:text-xs font-bold text-white">Open Now</span>
-                                </div>
-
-                                {/* AI Match card */}
-                                <div className="absolute top-4 right-4 md:top-8 md:right-8 bg-black/90 backdrop-blur-sm p-2 md:p-4 rounded-lg border border-white/10 shadow-xl max-w-[140px] md:max-w-[200px] anim-glow">
-                                    <div className="flex items-center gap-1 md:gap-2 mb-1 md:mb-2">
-                                        <span className="material-symbols-outlined text-beige-text text-xs md:text-sm">auto_awesome</span>
-                                        <span className="text-[9px] md:text-xs font-bold text-white uppercase">AI Match: 98%</span>
-                                    </div>
-                                    <p className="text-white text-xs md:text-sm font-bold">Hidden Kyoto Cafe</p>
-                                    <p className="text-beige-dim text-[10px] md:text-xs leading-tight">
-                                        Based on your quiet, classical vibe and love for traditional cafes.
-                                    </p>
-                                </div>
-
-                                {/* Hidden Kyoto Spots card */}
-                                <div className="absolute bottom-4 left-4 md:bottom-10 md:left-8 bg-black/90 backdrop-blur-sm p-2 md:p-4 rounded-lg border border-white/10 shadow-xl flex items-center gap-2 md:gap-4 pr-3 md:pr-6">
-                                    <div className="h-8 w-8 md:h-10 md:w-10 rounded-full bg-white/10 flex items-center justify-center text-beige-text">
-                                        <span className="material-symbols-outlined text-sm md:text-base">flight</span>
-                                    </div>
-                                    <div>
-                                        <p className="text-white text-xs md:text-sm font-bold">Hidden Kyoto Spots</p>
-                                        <p className="text-beige-dim text-[10px] md:text-xs">Curated from your vibe</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
