@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import kyotoCafeVideo from '../assets/images/videos/0207(1).mp4';
+import kyotoCafeVideoMobile from '../assets/images/videos/0207_mobile.mp4';
 import { ScrollReveal } from '../hooks/useScrollReveal';
 
 // Glass card component - almost fully transparent with subtle shine
@@ -69,12 +70,15 @@ export default function Landing() {
                             <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-surface-dark border border-white/10 card-shadow reflection-hover anim-scale">
                                 <video
                                     className="absolute inset-0 w-full h-full object-cover"
-                                    src={kyotoCafeVideo}
                                     autoPlay
                                     loop
                                     muted
                                     playsInline
-                                />
+                                    preload="metadata"
+                                >
+                                    <source src={kyotoCafeVideoMobile} media="(max-width: 767px)" type="video/mp4" />
+                                    <source src={kyotoCafeVideo} type="video/mp4" />
+                                </video>
                             </div>
                         </div>
 
@@ -97,7 +101,7 @@ export default function Landing() {
                                 From Shares to <br /><span className="text-beige-text">Experiences</span>
                             </h2>
                             <p className="text-beige-dim type-body measure mb-8">
-                                Our AI analyzes the content you share to discover local spots that match your aesthetic and vibe perfectly. No more generic "Top 10" lists.
+                                Our AI analyzes the content you share and how you interact with the app to discover local spots that match your aesthetic and vibe perfectly. No more generic "Top 10" lists.
                             </p>
                         </ScrollReveal>
 
@@ -133,7 +137,7 @@ export default function Landing() {
                                     </div>
                                     <h3 className="text-white font-bold text-lg mb-2">Fresh Curations</h3>
                                     <p className="text-beige-dim text-sm leading-relaxed">
-                                        Get a fresh batch of personalized suggestions every morning.
+                                        Get personalized recommendations whenever you want, however you want.
                                     </p>
                                 </div>
                             </ScrollReveal>

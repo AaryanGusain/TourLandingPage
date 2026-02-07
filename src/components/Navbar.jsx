@@ -63,8 +63,8 @@ export default function Navbar() {
 
             {/* Mobile menu overlay */}
             {mobileMenuOpen && (
-                <div className="fixed inset-0 bg-black backdrop-blur-md z-[60] md:hidden">
-                    <div className="flex flex-col h-full">
+                <div className="fixed inset-0 z-[200] bg-black md:hidden">
+                    <div className="flex min-h-dvh flex-col bg-black">
                         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
                             <Link to="/" className="flex items-center gap-3">
                                 <h2 className="text-white text-xl font-bold tracking-tight">Tour</h2>
