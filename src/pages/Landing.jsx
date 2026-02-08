@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import kyotoCafeVideo from '../assets/images/videos/0207(1).mp4';
 import kyotoCafeVideoMobile from '../assets/images/videos/0207_mobile.mp4';
+import discoveryVideo from '../assets/images/videos/0208.mp4';
 import { ScrollReveal } from '../hooks/useScrollReveal';
 
 // Glass card component - almost fully transparent with subtle shine
@@ -159,23 +160,16 @@ export default function Landing() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <ScrollReveal animation="fade-left" duration={1200}>
-                        <div className="relative rounded-2xl overflow-hidden aspect-video border border-white/10 group">
-                            <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/20 transition-all"></div>
-                            <div
-                                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                                style={{
-                                    backgroundImage: 'url(https://lh3.googleusercontent.com/aida-public/AB6AXuDJKpoMhAUsF8FyWBxO_vF5DCK-fBRpZEmTJaJRXwppenkKhuG3DvfRag58p56ohyONIO0-a49IlVO280T1k_N1gMMLtuZR7uMrJrjOSmrvuNvBnEtVN29MaHWNVzKqf9nLnSLyYQarz9Y44gOpQWDH_dA4xddGLwbRBlJvmcFJ-e6odPkKX8ue3fQBRS8RqduzelJgisV12sY5xYusbXgS9lMUWD6Ue73J2OhvOdVuBaqw70lv_NsX6vwqVJ67VZh8NuFyS3SH6ic)'
-                                }}
-                            ></div>
-                            <div className="absolute bottom-6 left-6 z-20">
-                                <span className="px-3 py-1 rounded bg-beige-text text-black text-xs font-bold mb-2 inline-block">
-                                    MATCH: 94%
-                                </span>
-                                <h3 className="text-white text-xl font-bold">Lake Louise, Canada</h3>
-                                <p className="text-white/80 text-sm">
-                                    Based on your outdoor vibe and love for lakes and mountain escapes
-                                </p>
-                            </div>
+                        <div className="relative rounded-2xl overflow-hidden aspect-video border border-white/10 bg-surface-dark">
+                            <video
+                                className="absolute inset-0 w-full h-full object-cover"
+                                src={discoveryVideo}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                preload="metadata"
+                            />
                         </div>
                     </ScrollReveal>
 
