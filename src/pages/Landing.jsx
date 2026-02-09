@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import kyotoCafeVideo from '../assets/images/videos/0207(1).mp4';
 import kyotoCafeVideoMobile from '../assets/images/videos/0207_mobile.mp4';
-import discoveryVideo from '../assets/images/videos/0208.mp4';
+import discoveryVideo from '../assets/images/videos/0208 (2)(2).mp4';
 import { ScrollReveal } from '../hooks/useScrollReveal';
 
 // Glass card component - almost fully transparent with subtle shine
