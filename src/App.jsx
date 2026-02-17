@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Layout from './components/Layout';
 import Landing from './pages/Landing';
 import AboutUs from './pages/AboutUs';
@@ -22,6 +23,7 @@ function App() {
                     <Route path="*" element={<Landing />} />
                 </Routes>
             </Layout>
+            <Analytics />
         </BrowserRouter>
     );
 }
