@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guides | Tour</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error-dim": "#4e0309",
+                        "on-primary-fixed": "#3f3f3f",
+                        "surface-tint": "#5e5e5e",
+                        "primary-fixed": "#e2e2e2",
+                        "error": "#9f403d",
+                        "on-secondary-fixed": "#314055",
+                        "surface-container": "#eaeff1",
+                        "primary-dim": "#525252",
+                        "on-secondary": "#f7f9ff",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "outline-variant": "#abb3b7",
+                        "on-secondary-container": "#435368",
+                        "primary-container": "#e2e2e2",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "inverse-primary": "#ffffff",
+                        "on-tertiary-fixed": "#ffffff",
+                        "tertiary-container": "#007aff",
+                        "on-tertiary": "#f9f8ff",
+                        "on-tertiary-container": "#000000",
+                        "background": "#f8f9fa",
+                        "error-container": "#fe8983",
+                        "on-surface": "#2b3437",
+                        "on-primary-container": "#525252",
+                        "surface-container-high": "#e3e9ec",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#5b5b5b",
+                        "on-surface-variant": "#586064",
+                        "secondary-container": "#d3e4fe",
+                        "on-primary": "#f8f8f8",
+                        "on-tertiary-fixed-variant": "#f8f8ff",
+                        "surface-container-low": "#f1f4f6",
+                        "surface-dim": "#d1dce0",
+                        "outline": "#737c7f",
+                        "primary-fixed-dim": "#d4d4d4",
+                        "primary": "#5e5e5e",
+                        "on-error-container": "#752121",
+                        "secondary-fixed": "#d3e4fe",
+                        "surface-variant": "#dbe4e7",
+                        "surface-container-highest": "#dbe4e7",
+                        "tertiary-dim": "#0050ab",
+                        "tertiary-fixed-dim": "#006ee6",
+                        "secondary-dim": "#44546a",
+                        "secondary": "#506076",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary": "#005bc2",
+                        "inverse-surface": "#0c0f10",
+                        "on-error": "#fff7f6",
+                        "tertiary-fixed": "#007aff",
+                        "inverse-on-surface": "#9b9d9e",
+                        "surface": "#f8f9fa",
+                        "on-background": "#2b3437"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #2b3437; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .tonal-section { background-color: #f1f4f6; }
+        .content-card { background-color: #ffffff; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-tertiary/10 selection:text-tertiary">
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-slate-100/50">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
+<span class="text-xl font-bold tracking-tighter text-slate-900">Tour</span>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 hover:text-slate-900 transition-colors text-sm" href="privacy.html">Privacy</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors text-sm" href="terms.html">Terms</a>
+<a class="text-blue-700 font-semibold border-b-2 border-blue-700 pb-1 text-sm" href="guides.html">Guides</a>
+</div>
+<div class="w-24 md:w-auto"></div>
+</div>
+</nav>
+
+<main class="pt-32 pb-20">
+<header class="max-w-7xl mx-auto px-8 mb-24">
+<div class="max-w-3xl">
+<span class="text-tertiary font-medium tracking-widest text-[0.65rem] uppercase mb-4 block">Product Guides</span>
+<h1 class="text-6xl md:text-7xl font-bold tracking-tighter text-on-surface leading-[0.9] mb-8">
+    How to Use Tour
+</h1>
+<div class="text-xl text-on-surface-variant leading-relaxed font-light space-y-4">
+<p>Welcome to the Tour guide. Below, you will find step-by-step instructions and overviews showing how our app features work.</p>
+</div>
+</div>
+</header>
+<section class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-16 relative items-start">
+<aside class="hidden md:block md:col-span-3 sticky top-32">
+<div class="space-y-6">
+<nav class="flex flex-col space-y-2 pr-4 overflow-y-auto max-h-[70vh] pb-4" id="toc" style="scrollbar-width: thin;">
+<a class="text-[13px] font-medium text-tertiary border-l-2 border-tertiary pl-4 block transition-colors leading-tight py-1" href="#step-1">Step 1</a>
+<a class="text-[13px] font-medium text-on-surface-variant hover:text-on-surface pl-4 transition-colors block border-l-2 border-transparent leading-tight py-1" href="#step-2">Step 2</a>
+<a class="text-[13px] font-medium text-on-surface-variant hover:text-on-surface pl-4 transition-colors block border-l-2 border-transparent leading-tight py-1" href="#step-3">Step 3</a>
+<a class="text-[13px] font-medium text-on-surface-variant hover:text-on-surface pl-4 transition-colors block border-l-2 border-transparent leading-tight py-1" href="#step-4">Step 4</a>
+<a class="text-[13px] font-medium text-on-surface-variant hover:text-on-surface pl-4 transition-colors block border-l-2 border-transparent leading-tight py-1" href="#step-5">Step 5</a>
+<a class="text-[13px] font-medium text-on-surface-variant hover:text-on-surface pl-4 transition-colors block border-l-2 border-transparent leading-tight py-1" href="#step-6">Step 6</a>
+<a class="text-[13px] font-medium text-on-surface-variant hover:text-on-surface pl-4 transition-colors block border-l-2 border-transparent leading-tight py-1" href="#step-7">Step 7</a>
+<a class="text-[13px] font-medium text-on-surface-variant hover:text-on-surface pl-4 transition-colors block border-l-2 border-transparent leading-tight py-1" href="#step-8">Step 8</a>
+<a class="text-[13px] font-medium text-on-surface-variant hover:text-on-surface pl-4 transition-colors block border-l-2 border-transparent leading-tight py-1" href="#step-9">Step 9</a>
+<a class="text-[13px] font-medium text-on-surface-variant hover:text-on-surface pl-4 transition-colors block border-l-2 border-transparent leading-tight py-1" href="#step-10">Step 10</a>
+<a class="text-[13px] font-medium text-on-surface-variant hover:text-on-surface pl-4 transition-colors block border-l-2 border-transparent leading-tight py-1" href="#step-11">Step 11</a>
+
+</nav>
+</div>
+</aside>
+<div class="md:col-span-9 space-y-16">
+
+<article class="max-w-2xl" id="step-1">
+<h2 class="text-2xl font-bold tracking-tight mb-8">Step 1</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<img src="assets/guidepages/guide_1.png" alt="Guide Step 1" class="w-full rounded-2xl shadow-sm border border-slate-100" />
+</div>
+</article>
+
+<article class="max-w-2xl" id="step-2">
+<h2 class="text-2xl font-bold tracking-tight mb-8">Step 2</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<img src="assets/guidepages/guide_2.png" alt="Guide Step 2" class="w-full rounded-2xl shadow-sm border border-slate-100" />
+</div>
+</article>
+
+<article class="max-w-2xl" id="step-3">
+<h2 class="text-2xl font-bold tracking-tight mb-8">Step 3</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<img src="assets/guidepages/guide_3.png" alt="Guide Step 3" class="w-full rounded-2xl shadow-sm border border-slate-100" />
+</div>
+</article>
+
+<article class="max-w-2xl" id="step-4">
+<h2 class="text-2xl font-bold tracking-tight mb-8">Step 4</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<img src="assets/guidepages/guide_4.png" alt="Guide Step 4" class="w-full rounded-2xl shadow-sm border border-slate-100" />
+</div>
+</article>
+
+<article class="max-w-2xl" id="step-5">
+<h2 class="text-2xl font-bold tracking-tight mb-8">Step 5</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<img src="assets/guidepages/guide_5.png" alt="Guide Step 5" class="w-full rounded-2xl shadow-sm border border-slate-100" />
+</div>
+</article>
+
+<article class="max-w-2xl" id="step-6">
+<h2 class="text-2xl font-bold tracking-tight mb-8">Step 6</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<img src="assets/guidepages/guide_6.png" alt="Guide Step 6" class="w-full rounded-2xl shadow-sm border border-slate-100" />
+</div>
+</article>
+
+<article class="max-w-2xl" id="step-7">
+<h2 class="text-2xl font-bold tracking-tight mb-8">Step 7</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<img src="assets/guidepages/guide_7.png" alt="Guide Step 7" class="w-full rounded-2xl shadow-sm border border-slate-100" />
+</div>
+</article>
+
+<article class="max-w-2xl" id="step-8">
+<h2 class="text-2xl font-bold tracking-tight mb-8">Step 8</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<img src="assets/guidepages/guide_8.png" alt="Guide Step 8" class="w-full rounded-2xl shadow-sm border border-slate-100" />
+</div>
+</article>
+
+<article class="max-w-2xl" id="step-9">
+<h2 class="text-2xl font-bold tracking-tight mb-8">Step 9</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<img src="assets/guidepages/guide_9.png" alt="Guide Step 9" class="w-full rounded-2xl shadow-sm border border-slate-100" />
+</div>
+</article>
+
+<article class="max-w-2xl" id="step-10">
+<h2 class="text-2xl font-bold tracking-tight mb-8">Step 10</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<img src="assets/guidepages/guide_10.png" alt="Guide Step 10" class="w-full rounded-2xl shadow-sm border border-slate-100" />
+</div>
+</article>
+
+<article class="max-w-2xl" id="step-11">
+<h2 class="text-2xl font-bold tracking-tight mb-8">Step 11</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<img src="assets/guidepages/guide_11.png" alt="Guide Step 11" class="w-full rounded-2xl shadow-sm border border-slate-100" />
+</div>
+</article>
+
+</div>
+</section>
+</main>
+<footer class="w-full py-20 mt-32 bg-slate-50 border-t border-slate-100">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+<div class="space-y-4">
+<span class="font-bold text-slate-900 text-lg">Tour</span>
+<p class="text-sm text-slate-500 max-w-xs">&copy; 2026 Tour. All rights reserved.</p>
+</div>
+<div class="flex gap-12">
+<div class="flex flex-col gap-3">
+<span class="text-xs font-bold text-slate-900 uppercase tracking-widest">Platform</span>
+<a class="text-sm text-slate-500 hover:text-blue-600 transition-colors" href="mailto:thetourtravelcompany@gmail.com">Contact</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-xs font-bold text-slate-900 uppercase tracking-widest">Legal</span>
+<a class="text-sm text-slate-500 hover:text-blue-600 transition-colors" href="privacy.html">Privacy</a>
+<a class="text-sm text-slate-500 hover:text-blue-600 transition-colors" href="terms.html">Terms</a>
+<a class="text-sm text-slate-500 hover:text-blue-600 transition-colors" href="guides.html">Guides</a>
+</div>
+</div>
+</div>
+</footer>
+<div class="fixed bottom-8 right-8 z-40">
+<a class="h-12 w-12 rounded-full bg-white shadow-xl flex items-center justify-center text-on-surface hover:text-tertiary transition-colors group" href="#">
+<span class="material-symbols-outlined transition-transform group-hover:-translate-y-1" data-icon="arrow_upward">arrow_upward</span>
+</a>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute("id");
+                    document.querySelectorAll("#toc a").forEach(a => {
+                        a.classList.remove("text-tertiary", "border-tertiary", "border-l-2");
+                        a.classList.add("text-on-surface-variant", "border-transparent");
+                    });
+                    const activeLink = document.querySelector(`#toc a[href="#${id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.remove("text-on-surface-variant", "border-transparent");
+                        activeLink.classList.add("text-tertiary", "border-tertiary", "border-l-2");
+                    }
+                }
+            });
+        }, { rootMargin: "0px 0px -80% 0px" });
+        
+        document.querySelectorAll("article[id]").forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+</body></html>
