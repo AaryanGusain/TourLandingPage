@@ -5,7 +5,7 @@ export default function Contact() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        reason: 'Beta access',
+        reason: 'General Inquiry',
         message: '',
     });
     const [status, setStatus] = useState({ type: '', message: '' });
@@ -34,9 +34,9 @@ export default function Contact() {
 
             setStatus({
                 type: 'success',
-                message: "Beta request received! We'll be in touch soon with early access details.",
+                message: "Message received! We'll be in touch soon.",
             });
-            setFormData({ name: '', email: '', reason: 'Beta access', message: '' });
+            setFormData({ name: '', email: '', reason: 'General Inquiry', message: '' });
         } catch (err) {
             setStatus({
                 type: 'error',
@@ -60,11 +60,11 @@ export default function Contact() {
                 <section className="max-w-4xl mx-auto text-center mb-16">
                     <p className="inline-flex items-center gap-2 px-3 py-1 border border-white/10 uppercase text-xs tracking-[0.3em] text-primary/80 anim-secondary">
                         <span className="size-1.5 rounded-full bg-primary animate-pulse"></span>
-                        Beta Access Open
+                        Available on the App Store
                     </p>
-                    <h1 className="type-h1 mt-6 anim-hero">Request Beta Access</h1>
+                    <h1 className="type-h1 mt-6 anim-hero">Contact Us</h1>
                     <p className="text-beige-dim type-body measure mx-auto mt-4 anim-primary">
-                        Be among the first to experience Tour. Share your vibe with us and we'll get you early access to personalized local discovery.
+                        Have a question, feedback, or just want to say hi? Ask us anything! We're here to chat. Oh, and by the way, Tour is now available on the App Store!
                     </p>
                 </section>
 
@@ -116,7 +116,7 @@ export default function Contact() {
                                         className="bg-background-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary focus:ring-1 focus:ring-primary/40 transition"
                                         required
                                     >
-                                        <option value="Beta access">Beta access</option>
+                                        <option value="General Inquiry">General Inquiry</option>
                                         <option value="Partnerships">Partnerships</option>
                                         <option value="Press">Press</option>
                                         <option value="Other">Other</option>
@@ -125,7 +125,7 @@ export default function Contact() {
 
                                 <ScrollReveal animation="fade-up" delay={300} className="flex flex-col gap-2 md:col-span-2">
                                     <label className="type-label text-white/80" htmlFor="contact-message">
-                                        Tell us about your vibe <span className="text-beige-dim">(optional)</span>
+                                        Your Message <span className="text-beige-dim">(optional)</span>
                                     </label>
                                     <textarea
                                         id="contact-message"
@@ -133,7 +133,7 @@ export default function Contact() {
                                         value={formData.message}
                                         onChange={handleChange}
                                         className="bg-background-dark border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-beige-dim min-h-[160px] focus:border-primary focus:ring-1 focus:ring-primary/40 transition shadow-inner"
-                                        placeholder="What kind of spots do you want Tour to find for you? (e.g., cozy cafes, hidden speakeasies, minimalist restaurants...)"
+                                        placeholder="What's on your mind? We'd love to hear from you."
                                     ></textarea>
                                 </ScrollReveal>
 
@@ -157,7 +157,7 @@ export default function Contact() {
                                         disabled={isSubmitting}
                                         className="bg-primary text-black font-bold py-3 rounded-lg hover:bg-white transition disabled:opacity-60 disabled:cursor-not-allowed reflection-hover anim-glow"
                                     >
-                                        Request Beta Access
+                                        Send Message
                                     </button>
                                 </div>
                             </form>
